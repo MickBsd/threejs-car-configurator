@@ -5,8 +5,8 @@ This my first Three.js project, a simple car configurator.
 
 At the second time, i will put it in a webflow website.
 
-## For test this project
-Run this followed commands:
+## Test this project
+For test the project, run this followed commands:
 
 ``` bash
 # Install dependencies (only the first time)
