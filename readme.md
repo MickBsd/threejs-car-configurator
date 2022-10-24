@@ -1,7 +1,11 @@
-# Three.js Journey
+# Three.js Car configurator
 
-## Setup
-Download [Node.js](https://nodejs.org/en/download/).
+## Description
+This my first Three.js project, a simple car configurator. 
+
+At the second time, i will put it in a webflow website.
+
+## For test this project
 Run this followed commands:
 
 ``` bash
