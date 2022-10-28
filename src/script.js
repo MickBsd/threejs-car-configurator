@@ -19,10 +19,26 @@ const scene = new THREE.Scene();
 //  Object  //
 //////////////
 
-const geometry = new THREE.BoxGeometry(12, 12, 33);
-const material = new THREE.MeshLambertMaterial({ color: 0xff8000 });
-const mesh = new THREE.Mesh(geometry, material);
-scene.add(mesh);
+const wheelGeo = new THREE.BoxGeometry(6, 6, 16);
+const wheelMat = new THREE.MeshLambertMaterial({ color: 0xff8000 });
+const cabineGeo = new THREE.BoxGeometry(40, 8, 14);
+const cabineMat = new THREE.MeshLambertMaterial({ color: 0xff0000 });
+const topGeo = new THREE.BoxGeometry(25, 8, 14);
+const topMat = new THREE.MeshLambertMaterial({ color: 0x0000ff });
+
+const wheelFront = new THREE.Mesh(wheelGeo, wheelMat);
+wheelFront.position.set(0, 0, 0);
+const wheelBack = new THREE.Mesh(wheelGeo, wheelMat);
+wheelBack.position.set(-20, 0, 0);
+const cabine= new THREE.Mesh(cabineGeo, cabineMat);
+cabine.position.set(-8, 3, 0);
+const top = new THREE.Mesh(topGeo, topMat);
+top.position.set(-8, 10, 0);
+
+const truck = new THREE.Group();
+truck.add(wheelFront, wheelBack, cabine, top);
+scene.add(truck);
+
 
 
 /////////////
@@ -63,8 +79,6 @@ camera.lookAt(0, 0, 0);
 
 scene.add(camera);
 
-
-
 //const controls = new OrbitControls(camera, canvas)
 //controls.enableDamping = true
 
@@ -91,23 +105,3 @@ const renderer = new THREE.WebGLRenderer({
 renderer.setSize(sizes.width, sizes.height);
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 renderer.render(scene, camera);
-
-/*
-const clock = new THREE.Clock()
-
-const tick = () =>
-{
-    const elapsedTime = clock.getElapsedTime()
-
-    // Update controls
-    controls.update()
-
-    // Render
-    renderer.render(scene, camera)
-
-    // Call tick again on the next frame
-    window.requestAnimationFrame(tick)
-}
-
-tick()
-*/
