@@ -40,7 +40,6 @@ truck.add(wheelFront, wheelBack, cabine, top);
 scene.add(truck);
 
 
-
 /////////////
 //  Sizes  //
 /////////////
