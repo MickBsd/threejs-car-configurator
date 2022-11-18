@@ -40,7 +40,6 @@ truck.add(wheelFront, wheelBack, cabine, top);
 scene.add(truck);
 
 
-
 /////////////
 //  Sizes  //
 /////////////
@@ -61,6 +60,7 @@ camera.position.x = 0;
 camera.position.y = 0;
 camera.position.z = 2;
 */
+
 // Setting up camera
 const aspectRatio = window.innerWidth / window.innerHeight;
 const cameraWidth = 150;
